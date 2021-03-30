@@ -93,7 +93,7 @@ exports.studentById = (req, res, next, id) => {
 	});
 }
 exports.read = function (req, res) {
-    res.status(200).json(students);
+    res.status(200).json(req.course);
 };
 exports.enrolled = (req, res) => {
     console.log(req.course)
