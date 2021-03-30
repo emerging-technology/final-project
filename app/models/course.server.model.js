@@ -17,6 +17,6 @@ const CourseSchema = new Schema({
         trim: true
     },
     semester: Number,
-    students: [ {type: Schema.Types.ObjectId, ref: 'Student', unique: true}]
+    students: [ {type: Schema.Types.ObjectId, ref: 'Student', unique: false}]
 });
 mongoose.model('Course', CourseSchema);

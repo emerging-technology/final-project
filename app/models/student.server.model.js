@@ -33,7 +33,7 @@ var StudentSchema = new Schema({
 			'Password should be longer'
 		]
 	},
-	courses: [{type: Schema.Types.ObjectId, ref: 'Course',  unique: true}]
+	courses: [{type: Schema.Types.ObjectId, ref: 'Course',  unique: false}]
 });
 
 // Set the 'fullname' virtual property

@@ -21,7 +21,7 @@ function StudentSignUp(props) {
     axios.post(apiUrl, data, {withCredentials: true})
       .then((result) => {
         setShowLoading(false);
-        props.history.push('/login')
+        props.history.push('/')
       }).catch((error) => setShowLoading(false));
   };
 

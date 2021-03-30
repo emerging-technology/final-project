@@ -23,6 +23,7 @@ import ShowUser from "./components/ShowUser";
 import AddCourse from "./components/AddCourse";
 import EditCourse from "./components/EditCourse";
 import ShowStudentCourses from "./components/ShowStudentCourses";
+import EnrolledStudents from "./components/EnrolledStudents";
 import ShowArticle from "./components/ShowArticle";
 
 import Login from "./components/Login";
@@ -62,6 +63,7 @@ function App() {
           <StudentSignUp />
         </Route>
         <Route render={() => <ListStudents />} path="/listStudents" />
+        <Route render={() => <EnrolledStudents />} path="/enrolledStudents/:id" />
         <Route render={() => <AddCourse />} path="/addCourse" />
         <Route render={() => <EditUser />} path="/edit/:id" />
         <Route render={() => <ShowUser />} path="/show/:id" />

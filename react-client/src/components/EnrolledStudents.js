@@ -1,24 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ListGroup from 'react-bootstrap/ListGroup';
-import Spinner from 'react-bootstrap/Spinner';
-import Jumbotron from 'react-bootstrap/Jumbotron';
 import Button from 'react-bootstrap/Button';
+import Spinner from 'react-bootstrap/Spinner';
 import { withRouter } from 'react-router-dom';
+import Login from './Login';
 
-function ShowStudentCourses(props) {
+
+function EnrolledStudents(props) {
   const [data, setData] = useState([]);
   const [showLoading, setShowLoading] = useState(true);
+  const apiUrl = "http://localhost:5000/api/enrolled/" + props.match.params.id;
+
   useEffect(() => {
     const fetchData = async () => {
-      setShowLoading(true);
-      axios.get("http://localhost:5000/showCourses/" + props.match.params.id, {withCredentials: true})
-      .then(result => {
-        console.log("show student courses", result.data)
-        setData(result.data);
-      }).catch(error => console.log(error))
-      setShowLoading(false);
-    };
+      axios.get(apiUrl, {withCredentials: true})
+        .then(result => {
+          console.log("~~~", result.data)
+          setShowLoading(false);
+          setData(result.data);
+        }).catch((error) => {
+          console.log('error in fetchData:', error)
+        });
+    };  
     fetchData();
   }, []);
 
@@ -32,7 +36,7 @@ function ShowStudentCourses(props) {
             data.map((item, idx) => (
               <ListGroup.Item key={idx}>
                 <div className="d-flex justify-content-around">
-                  {item.courseCode} {item.courseName} Sec-{item.section}
+                  {item.studentNumber} {item.fullName} {item.email}
                 </div>
               </ListGroup.Item>
             ))
@@ -43,5 +47,5 @@ function ShowStudentCourses(props) {
     </div>
   );
 }
-
-export default withRouter(ShowStudentCourses);
+//
+export default withRouter(EnrolledStudents);

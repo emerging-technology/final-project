@@ -29,44 +29,20 @@ function ListCourses(props) {
   const enrollInCourse = async course => {
     console.log(course)
     setShowLoading(true);
-    axios.put(`http://localhost:5000/api/enroll/${course._id}`, {},{withCredentials: true}).then((result=>{
-      console.log(result);
+    axios.put(`http://localhost:5000/api/enroll/${course._id}`, {}, {withCredentials: true}).then(result=>{
+      console.log("~~~", result.data);
       setShowLoading(false);
-    }))
-    
+    })
   }
 
   const dropCourse = async course => {
-    // TODO
     console.log(course)
     setShowLoading(true);
-    axios.put(`http://localhost:5000/api/drop/${course._id}`,  {withCredentials: true}).then((result)=>{
+    axios.put(`http://localhost:5000/api/drop/${course._id}`, {}, {withCredentials: true}).then((result)=>{
         setShowLoading(false);
     });
-    // axios.get("http://localhost:5000/studentsEmail/" + email, {withCredentials: true})
-    // // axios.get("http://localhost:3000/studentsEmail/" + email)
-    //   .then(result => {
-    //     setShowLoading(true)
-    //     let student = result.data
-    //     // remove selected course
-    //     student.courses = student.courses.filter(item => item !== course)
-    //     console.log("Student Object", student)
-    //     console.log("Course Object", course)
-    //     // TODO: finish saving to API
-    //     console.log("AXIOS URL", "http://localhost:5000/students/" + student._id)
-    //     axios.put("http://localhost:5000/students/" + student._id, student, {withCredentials: true})
-    //     // axios.put("http://localhost:3000/students/" + student._id, student)
-    //       .then(result2 => {
-    //         console.log("DONE!!!!")
-    //         setShowLoading(false)
-    //       }).catch(err => { console.log('error', err)})
-    //   }).catch(err => { console.log('error', err)})
   }
 
-  const enrolledStudents = course => {
-    // TODO
-    console.log(course)
-  }
 
   const updateCourse = course => {
     console.log(course)
@@ -103,7 +79,7 @@ function ListCourses(props) {
                   {/* TODO: complete the following functionality */}
                   <Button  onClick={() => { enrollInCourse(item) }}>Enroll in Course</Button>
                   <Button  onClick={() => { dropCourse(item) }}>Drop Course</Button>
-                  <Button  onClick={() => { enrolledStudents(item) }}>Enrolled Students</Button>
+                  <Button  href={"/enrolledStudents/" + item._id}>Enrolled Students</Button>
                   <Button  onClick={() => { updateCourse(item) }}>Update Course</Button>
                   <Button variant="danger" onClick={() => { deleteCourse(item) }}>Delete Course</Button>
                 </div>
