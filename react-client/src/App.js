@@ -13,64 +13,40 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import "./App.css";
-//
-import ListStudents from "./components/ListStudents";
-import EditUser from "./components/EditUser";
-import EditArticle from "./components/EditArticle";
-import ListCourses from "./components/ListCourses";
-import StudentSignUp from "./components/StudentSignUp";
-import ShowUser from "./components/ShowUser";
-import AddCourse from "./components/AddCourse";
-import EditCourse from "./components/EditCourse";
-import ShowStudentCourses from "./components/ShowStudentCourses";
-import EnrolledStudents from "./components/EnrolledStudents";
-import ShowArticle from "./components/ShowArticle";
+import SignUp from "./components/SignUp";
+import AddVitalSignForm from "./components/AddVitalSignForm";
+import PatientVitalSignsPage from "./components/PatientVitalSignsPage";
 
 import Login from "./components/Login";
 //
 function App() {
   return (
     <Router>
-      {/* <Navbar bg="light" expand="lg">
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="/home">Home</Nav.Link>
-            <Nav.Link href="/login">Login</Nav.Link>
-            <Nav.Link href="/list">List of Users</Nav.Link>
-            <Nav.Link href="/create">Sign Up</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar> */}
-      <br/>
-      <br/>
+      <br />
+      <br />
       <div className="container">
-        <div className="row">
-          <div className="col-lg-12 text-center">
-            <a className="mt-5 h1 text-dark" href="/">A Student/Course System</a>
-            <p className="lead">Using the MERN stack</p>
-          </div>
+        <div className="col-lg-12 text-center">
+          <a className="mt-5 h1 text-dark" href="/login">
+            A Hospital System
+          </a>
+          <img src={process.env.PUBLIC_URL + "/logo.png"} alt="logo" />
         </div>
       </div>
-      <br/>
-      <br/>
+      <br />
+      <br />
 
       <Switch>
         <Route path="/login">
           <Login />
         </Route>
         <Route path="/create">
-          <StudentSignUp />
+          <SignUp />
         </Route>
-        <Route render={() => <ListStudents />} path="/listStudents" />
-        <Route render={() => <EnrolledStudents />} path="/enrolledStudents/:id" />
-        <Route render={() => <AddCourse />} path="/addCourse" />
-        <Route render={() => <EditUser />} path="/edit/:id" />
-        <Route render={() => <ShowUser />} path="/show/:id" />
-        <Route render={() => <ShowStudentCourses />} path="/showStudentCourses/:id" />
-        <Route render={() => <ListCourses />} path="/listCourses" />
-        <Route render={() => <EditArticle />} path="/editarticle/:id" />
-        <Route render={() => <EditCourse />} path="/editCourse/:id" />
+        <Route render={() => <AddVitalSignForm />} path="/add_vital_sign/:id" />
+        <Route
+          render={() => <PatientVitalSignsPage />}
+          path="/patient_vital_signs/:id"
+        />
       </Switch>
       <Route path="/" exact>
         <div className="container">
@@ -91,5 +67,4 @@ function App() {
     </Router>
   );
 }
-//<Route render ={()=> < App />} path="/" />
 export default App;
