@@ -10,7 +10,7 @@ var config = require('./config'),
     session = require('express-session');
     const cookieParser = require('cookie-parser');
     // cors
-    const cors = require('cors')
+    const cors = require('cors');
 
     
 // Create a new Express application instance
