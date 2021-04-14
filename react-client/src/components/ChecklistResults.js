@@ -10,6 +10,22 @@ const ChecklistResults = (props) => {
   const checklist = 
     (props.location && props.location.state) || {};
   const apiUrl = "http://localhost:5000/checklistResults";
+  const diseases = [
+    "heart_attack",
+    "stroke",
+    "gastroenteritis",
+    "irritable_bowel_syndrome",
+    "appendicitis",
+    "back_pain",
+    "gastroesophageal_reflux_disease",
+    "ear_infection",
+    "dehydration",
+    "dentin_hypersensitivity",
+    "paresthesia",
+    "muscular_dystrophy",
+    "sleep_apnea"
+  ]
+
   //runs once after the first rendering of page
   useEffect(() => {
     const fetchData = async () => {
@@ -42,17 +58,18 @@ const ChecklistResults = (props) => {
             </Spinner>
           )}
           <h1>Prediction Results</h1>
-          <h2>the values for species will be:</h2>
-          <li>setosa: 1, 0, 0</li>              
-          <li>virginica: 0, 1, 0</li>
-          <li>versicolor: 0, 0, 1 </li>
-          <br/> <br/>
+          <br/>
           <h2>Results of Input</h2>
-          <ol>
+          <h4>
+            {diseases[data.indexOf(Math.max(...data))].split("_").map(x => x[0].toUpperCase() + x.slice(1)).join(" ")}, at {Math.round(data[data.indexOf(Math.max(...data))] * 100)}% confidence
+          </h4>
+          <br/> <br/>
+          <h2>Complete Results</h2>
+          <ul>
             {data.map((value, index) => (
-              <li key={index}>{value}</li>
+              <li key={index}>{diseases[index].split("_").map(x => x[0].toUpperCase() + x.slice(1)).join(" ")}, at {Math.round(value * 100)}% confidence</li>
             ))}
-          </ol>
+          </ul>
           <div>
             <NavLink to="/" activeClassName="active">
               Go Back
