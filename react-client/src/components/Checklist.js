@@ -62,10 +62,7 @@ const Checklist = (props) => {
           <h1>Select your symptoms for analysis</h1>
           <Form className="register-form" onSubmit={handleOnSubmit}>
               <Form.Group>
-              {/* <Form.Check type="checkbox" name="abdominal_pain" label="Abdominal Pain" onChange={handleInputChange}/>
-              <Form.Check type="checkbox" name="acid_taste" label="Acid Taste" onChange={handleInputChange}/> */}
               {checkboxValues.map(x => (
-                //   x
                 <Form.Check type="checkbox" name={x} key={x}
                   label={x.split("_").map(x => x[0].toUpperCase() + x.slice(1)).join(" ")} 
                   onChange={handleInputChange}/>

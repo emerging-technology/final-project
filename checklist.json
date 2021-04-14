@@ -1,0 +1,11 @@
+[
+    {
+        "cause": "heart attack", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": true, "cold_sweat": true, "confusion": true, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": true, "muscle_weakness": false, "nausea": true, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": true, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    }
+]

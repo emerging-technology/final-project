@@ -4,6 +4,8 @@ const VitalSign = mongoose.model("VitalSign");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const config = require("../../config/config");
+const tf = require("@tensorflow/tfjs");
+
 const jwtExpirySeconds = 300;
 const jwtKey = config.secretKey;
 
@@ -141,9 +143,185 @@ exports.readEmail = function (req, res) {
 };
 
 exports.checklistResults = (req, res) => {
+  const checklist = require("../../checklist.json");
+  const checklistTest = require("../../checklist-test.json");
   console.log("request body", req.body)
+  // console.log("checklist", checklist)
+  // console.log("checklistTest", checklistTest)
   // request id currently is not working
   // console.log("request id", req.id)
+
+  // convert/setup our data for tensorflow.js
+  //tensor of features for training data
+  const trainingData = tf.tensor2d(
+    checklist.map(item => [
+      item.abdominal_pain ? 1 : 0,
+      item.arm_numbness ? 1 : 0,
+      item.arm_weakness ? 1 : 0,
+      item.back_ache ? 1 : 0,
+      item.back_burning_sensation ? 1 : 0,
+      item["chest_pain/pressure"] ? 1 : 0,
+      item.cold_sweat ? 1 : 0,
+      item.confusion ? 1 : 0,
+      item.diarrhea ? 1 : 0,
+      item.difficulty_with_speech ? 1 : 0,
+      item.dizziness ? 1 : 0,
+      item.ear_pain ? 1 : 0,
+      item.extreme_thirst ? 1 : 0,
+      item.fatigue ? 1 : 0,
+      item.fever ? 1 : 0,
+      item.heartburn ? 1 : 0,
+      item.insomnia ? 1 : 0,
+      item.leg_numbness ? 1 : 0,
+      item.less_frequent_urination ? 1 : 0,
+      item.lightheadedness ? 1 : 0,
+      item.muscle_weakness ? 1 : 0,
+      item.nausea ? 1 : 0,
+      item.overweight ? 1 : 0,
+      item.pelvic_pain ? 1 : 0,
+      item.severe_headache ? 1 : 0,
+      item.shortness_of_breath ? 1 : 0,
+      item.spine_damage ? 1 : 0,
+      item.taste_acid ? 1 : 0,
+      item.toothache ? 1 : 0,
+      item.vomiting ? 1 : 0,
+      item.weakness ? 1 : 0
+    ])
+  );
+  console.log("training data", trainingData)
+  // //tensor of output for training data
+  const outputData = tf.tensor2d(
+    checklist.map(item => [
+      item.cause === "heart_attack" ? 1 : 0,
+      item.cause === "stroke" ? 1 : 0,
+      item.cause === "gastroenteritis" ? 1 : 0,
+      item.cause === "irritable_bowel_syndrome" ? 1 : 0,
+      item.cause === "appendicitis" ? 1 : 0,
+      item.cause === "back_pain" ? 1 : 0,
+      item.cause === "gastroesophageal_reflux_disease" ? 1 : 0,
+      item.cause === "ear_infection" ? 1 : 0,
+      item.cause === "dehydration" ? 1 : 0,
+      item.cause === "dentin_hypersensitivity" ? 1 : 0,
+      item.cause === "paresthesia" ? 1 : 0,
+      item.cause === "muscular_dystrophy" ? 1 : 0,
+      item.cause === "sleep_apnea" ? 1 : 0
+    ])
+  );
+  // //
+  // //tensor of features for testing data
+  const testingData = tf.tensor2d(
+    [[
+      req.body.abdominal_pain ? 1 : 0,
+      req.body.arm_numbness ? 1 : 0,
+      req.body.arm_weakness ? 1 : 0,
+      req.body.back_ache ? 1 : 0,
+      req.body.back_burning_sensation ? 1 : 0,
+      req.body["chest_pain/pressure"] ? 1 : 0,
+      req.body.cold_sweat ? 1 : 0,
+      req.body.confusion ? 1 : 0,
+      req.body.diarrhea ? 1 : 0,
+      req.body.difficulty_with_speech ? 1 : 0,
+      req.body.dizziness ? 1 : 0,
+      req.body.ear_pain ? 1 : 0,
+      req.body.extreme_thirst ? 1 : 0,
+      req.body.fatigue ? 1 : 0,
+      req.body.fever ? 1 : 0,
+      req.body.heartburn ? 1 : 0,
+      req.body.insomnia ? 1 : 0,
+      req.body.leg_numbness ? 1 : 0,
+      req.body.less_frequent_urination ? 1 : 0,
+      req.body.lightheadedness ? 1 : 0,
+      req.body.muscle_weakness ? 1 : 0,
+      req.body.nausea ? 1 : 0,
+      req.body.overweight ? 1 : 0,
+      req.body.pelvic_pain ? 1 : 0,
+      req.body.severe_headache ? 1 : 0,
+      req.body.shortness_of_breath ? 1 : 0,
+      req.body.spine_damage ? 1 : 0,
+      req.body.taste_acid ? 1 : 0,
+      req.body.toothache ? 1 : 0,
+      req.body.vomiting ? 1 : 0,
+      req.body.weakness ? 1 : 0
+    ]])
+
+  // build neural network using a sequential model
+  const model = tf.sequential();
+  //add the first layer
+  model.add(
+    tf.layers.dense({
+      inputShape: [31], // four input neurons
+      activation: "sigmoid",
+      units: 32, //dimension of output space (first hidden layer)
+    })
+  );
+  //add the hidden layer
+  model.add(
+    tf.layers.dense({
+      inputShape: [32], //dimension of hidden layer
+      activation: "sigmoid",
+      units: 13, //dimension of final output
+    })
+  );
+
+  // //add output layer
+  model.add(
+    tf.layers.dense({
+      activation: "sigmoid",
+      units: 13, //dimension of final output
+    })
+  );
+  // //compile the model with an MSE loss function and Adam algorithm
+  model.compile({
+    loss: "meanSquaredError",
+    optimizer: tf.train.adam(0.06), //0.06
+  });
+
+  console.log(model.summary());
+
+  // //train the model and predic
+
+  async function run() {
+    const startTime = Date.now();
+    await model.fit(trainingData, outputData, {
+      epochs: req.body.epoch, //100
+      callbacks: {
+        onEpochEnd: async (epoch, log) => {
+          lossValue = log.loss;
+          // console.log(`epoch ${epoch}; lossValue = ${log.loss}`);
+          elapsedTime = Date.now() - startTime;
+          // console.log("elapsed time: " + elapsedTime);
+        },
+      },
+    });
+    const results = model.predict(testingData);
+    results.array().then(array => {
+      console.log(array)
+    })
+
+    // results.array().then((array) => {
+    //   console.log(array[0][0]);
+    //   var resultForData1 = array[0];
+    //   // var resultForData2 = array[1];
+    //   // var resultForData3 = array[2];
+    //   var dataToSend = {
+    //     row1: resultForData1,
+    //     // row2: resultForData2,
+    //     // row3: resultForData3,
+    //   };
+    //   console.log(resultForData1);
+    //   res.status(200).send(dataToSend);
+
+    //   // res.render("results", {
+    //   //   elapsedTime: elapsedTime / 1000,
+    //   //   lossValue: lossValue,
+    //   //   resultForData1: resultForData1[0],
+    //   //   resultForData2: resultForData2,
+    //   //   resultForData3: resultForData3,
+    //   // });
+    // });
+  } //end of the function
+  run();
+
   res.send(req.body)
 }
 
