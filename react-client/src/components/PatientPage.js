@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { withRouter } from 'react-router-dom';
+
+import Button from "react-bootstrap/Button";
+import Spinner from "react-bootstrap/Spinner";
 import axios from "axios";
 import ListGroup from "react-bootstrap/ListGroup";
 import { Card } from "react-bootstrap";
@@ -10,6 +14,18 @@ import { withRouter } from "react-router-dom";
 function PatientPage(props) {
   const [data, setData] = useState([]);
   const [showLoading, setShowLoading] = useState(true);
+  const [screen, setScreen] = useState("auth");
+
+  const deleteCookie = async () => {
+    try {
+      await axios.get('http://localhost:5000/signout', {withCredentials: true});
+      setScreen('auth');
+      props.history.push('/');
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   useEffect(() => {
     console.log("start");
     axios
@@ -28,6 +44,7 @@ function PatientPage(props) {
       });
   }, []);
 
+  // read the info from props, coming from the ancestor component
   return (
     <div className="container">
       <div className="flex">
@@ -36,6 +53,12 @@ function PatientPage(props) {
         <Button href="/add_emergency">
           Add Emergency Message
         </Button>        
+        <Button variant="primary" href="/checklist">
+          Check Symptoms
+        </Button>
+        <Button variant="primary" onClick={deleteCookie}>
+          Log Out
+        </Button>
         <br/>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/zJpfX8R6Lfo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>      

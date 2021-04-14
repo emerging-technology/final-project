@@ -1,0 +1,425 @@
+[
+    {
+        "cause": "heart_attack", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": true, "cold_sweat": true, "confusion": true, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": true, "muscle_weakness": false, "nausea": true, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": true, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "heart_attack", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": true, "cold_sweat": false, "confusion": true, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": true, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": true, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "heart_attack", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": true, "cold_sweat": true, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": true, "muscle_weakness": false, "nausea": true, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "heart_attack", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": true, "cold_sweat": false, "confusion": true, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": true, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "heart_attack", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": true, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": true, "muscle_weakness": false, "nausea": true, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": true, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "stroke", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": true, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": true, "dizziness": true, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": true, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "stroke", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": true, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": true, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "stroke", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": true, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": true, "dizziness": true, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "stroke", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": true, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": true, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "stroke", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": true, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": true, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "stroke", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": true, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": true, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": true, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "stroke", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": true, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": true, "dizziness": true, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "gastroenteritis", "abdominal_pain": true, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": true,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": true, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": true, "weakness": true
+    },
+    {
+        "cause": "gastroenteritis", "abdominal_pain": true, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": true,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "gastroenteritis", "abdominal_pain": true, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": true,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": true, "weakness": true
+    },
+    {
+        "cause": "gastroenteritis", "abdominal_pain": true, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": true, "weakness": false
+    },
+    {
+        "cause": "gastroenteritis", "abdominal_pain": true, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": true,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "irritable_bowel_syndrome", "abdominal_pain": true, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": true,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": true, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": true, "weakness": true
+    },
+    {
+        "cause": "irritable_bowel_syndrome", "abdominal_pain": true, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": true,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": true, "weakness": false
+    },
+    {
+        "cause": "irritable_bowel_syndrome", "abdominal_pain": true, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": true,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": true
+    },
+    {
+        "cause": "irritable_bowel_syndrome", "abdominal_pain": true, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": true, "weakness": true
+    },
+    {
+        "cause": "irritable_bowel_syndrome", "abdominal_pain": true, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": true,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": true
+    },
+    {
+        "cause": "appendicitis", "abdominal_pain": true, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "back_pain", "abdominal_pain": false, "arm_numbness": true, "arm_weakness": false, "back_ache": true,
+        "back_burning_sensation": true, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": true, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": true, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "back_pain", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": true,
+        "back_burning_sensation": true, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "back_pain", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": true,
+        "back_burning_sensation": true, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": true, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "back_pain", "abdominal_pain": false, "arm_numbness": true, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": true, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": true, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "back_pain", "abdominal_pain": false, "arm_numbness": true, "arm_weakness": false, "back_ache": true,
+        "back_burning_sensation": true, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": true, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": true, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "gastroesophageal_reflux_disease", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": true, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": true, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": true, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "gastroesophageal_reflux_disease", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": true, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "gastroesophageal_reflux_disease", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": true, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": true, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "gastroesophageal_reflux_disease", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": true, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": true, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "gastroesophageal_reflux_disease", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": true, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": true, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "ear_infection", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": true, "ear_pain": true, "extreme_thirst": false, "fatigue": false,
+        "fever": true, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "ear_infection", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": true, "extreme_thirst": false, "fatigue": false,
+        "fever": true, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "ear_infection", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": true, "ear_pain": true, "extreme_thirst": false, "fatigue": false,
+        "fever": true, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "ear_infection", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": true, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "dehydration", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": true, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": true, "ear_pain": false, "extreme_thirst": true, "fatigue": true,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": true,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "dehydration", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": true, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": true,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "dehydration", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": true, "ear_pain": false, "extreme_thirst": true, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": true,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "dehydration", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": true, "fatigue": true,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": true,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "dentin_hypersensitivity", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": true,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "paresthesia", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": true, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": true, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "paresthesia", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": true, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "paresthesia", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": true, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "muscular_dystrophy", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": false, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": true, "nausea": false, "overweight": false, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    },
+    {
+        "cause": "sleep_apnea", "abdominal_pain": false, "arm_numbness": false, "arm_weakness": false, "back_ache": false,
+        "back_burning_sensation": false, "chest_pain/pressure": false, "cold_sweat": false, "confusion": false, "diarrhea": false,
+        "difficulty_with_speech": false, "dizziness": false, "ear_pain": false, "extreme_thirst": false, "fatigue": false,
+        "fever": false, "heartburn": false, "insomnia": true, "leg_numbness": false, "less_frequent_urination": false,
+        "lightheadedness": false, "muscle_weakness": false, "nausea": false, "overweight": true, "pelvic_pain": false,
+        "severe_headache": false, "shortness_of_breath": false, "spine_damage": false, "taste_acid": false, "toothache": false,
+        "vomiting": false, "weakness": false
+    }
+]

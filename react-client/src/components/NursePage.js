@@ -1,12 +1,29 @@
 import React, { useState, useEffect } from "react";
+import { withRouter } from 'react-router-dom';
+
 //import ReactDOM from 'react-dom';
 import Form from "react-bootstrap/Form";
 import ListGroup from "react-bootstrap/ListGroup";
 import Spinner from "react-bootstrap/Spinner";
+import Button from "react-bootstrap/Button";
+
 import axios from "axios";
 function NursePage(props) {
   const [data, setData] = useState([]);
   const [showLoading, setShowLoading] = useState(true);
+  // const { screen, setScreen } = props;
+  const [screen, setScreen] = useState("auth");
+
+  const deleteCookie = async () => {
+    try {
+      await axios.get('http://localhost:5000/signout', {withCredentials: true});
+      setScreen('auth');
+      props.history.push('/');
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   useEffect(() => {
     console.log("start");
     axios
@@ -43,8 +60,14 @@ function NursePage(props) {
           </ListGroup.Item>
         ))}
       </ListGroup>
+      <Button variant="primary" href="/checklist">
+        Check Symptoms
+      </Button> &nbsp;
+      <Button variant="primary" onClick={deleteCookie}>
+        Log Out
+      </Button>
     </div>
   );
 }
 
-export default NursePage;
+export default withRouter(NursePage);
