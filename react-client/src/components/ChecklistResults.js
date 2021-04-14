@@ -4,7 +4,7 @@ import Spinner from "react-bootstrap/Spinner";
 import { NavLink } from "react-router-dom";
 
 const ChecklistResults = (props) => {
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
   const [type, setType] = useState("");
   const [showLoading, setShowLoading] = useState(true);
   const checklist = 
@@ -20,8 +20,8 @@ const ChecklistResults = (props) => {
         //         "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token" }})
         .post(apiUrl, checklist, {withCredentials: true})
         .then(result => {
-          console.log("result.data:", result.data);
-          setData(result.data);
+          console.log("result.data:", result.data[0]);
+          setData(result.data[0]);
           setShowLoading(false);
         })
         .catch((error) => {
@@ -48,11 +48,11 @@ const ChecklistResults = (props) => {
           <li>versicolor: 0, 0, 1 </li>
           <br/> <br/>
           <h2>Results of Input</h2>
-          {/* <div>
-            {data.row1.map((value, index) => (
-              <p key={index}>{value}</p>
+          <ol>
+            {data.map((value, index) => (
+              <li key={index}>{value}</li>
             ))}
-          </div> */}
+          </ol>
           <div>
             <NavLink to="/" activeClassName="active">
               Go Back

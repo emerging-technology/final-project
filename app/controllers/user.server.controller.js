@@ -295,11 +295,10 @@ exports.checklistResults = (req, res) => {
     const results = model.predict(testingData);
     results.array().then(array => {
       console.log(array)
+      res.send(array)
     })
   }
   run();
-
-  res.send(req.body)
 }
 
 // 'userByID' controller method to find a user by its id
