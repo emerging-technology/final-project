@@ -26,6 +26,13 @@ const ChecklistResults = (props) => {
     "sleep_apnea"
   ]
 
+  const dangerousDiseases = [
+    "heart_attack",
+    "stroke",
+    "appendicitis",
+    "muscular_dystrophy"
+  ]
+
   //runs once after the first rendering of page
   useEffect(() => {
     const fetchData = async () => {
@@ -61,13 +68,18 @@ const ChecklistResults = (props) => {
           <br/>
           <h2>Results of Input</h2>
           <h4>
-            {diseases[data.indexOf(Math.max(...data))].split("_").map(x => x[0].toUpperCase() + x.slice(1)).join(" ")}, at {Math.round(data[data.indexOf(Math.max(...data))] * 100)}% confidence
+            {diseases[data.indexOf(Math.max(...data))].split("_").map(x => x[0].toUpperCase() + x.slice(1)).join(" ")}, 
+            at {Math.round(data[data.indexOf(Math.max(...data))] * 100)}% confidence
           </h4>
+          <h5>
+            You {dangerousDiseases.indexOf(diseases[data.indexOf(Math.max(...data))]) === -1 ? "do not" : ""} need to see a doctor
+          </h5>
           <br/> <br/>
           <h2>Complete Results</h2>
           <ul>
             {data.map((value, index) => (
-              <li key={index}>{diseases[index].split("_").map(x => x[0].toUpperCase() + x.slice(1)).join(" ")}, at {Math.round(value * 100)}% confidence</li>
+              <li key={index}>{diseases[index].split("_").map(x => x[0].toUpperCase() + x.slice(1)).join(" ")}, 
+              at {Math.round(value * 100)}% confidence</li>
             ))}
           </ul>
           <div>
