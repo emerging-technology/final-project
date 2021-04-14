@@ -279,11 +279,10 @@ exports.checklistResults = (req, res) => {
   console.log(model.summary());
 
   // //train the model and predic
-
   async function run() {
     const startTime = Date.now();
     await model.fit(trainingData, outputData, {
-      epochs: req.body.epoch, //100
+      epochs: 500, //100
       callbacks: {
         onEpochEnd: async (epoch, log) => {
           lossValue = log.loss;
@@ -297,29 +296,7 @@ exports.checklistResults = (req, res) => {
     results.array().then(array => {
       console.log(array)
     })
-
-    // results.array().then((array) => {
-    //   console.log(array[0][0]);
-    //   var resultForData1 = array[0];
-    //   // var resultForData2 = array[1];
-    //   // var resultForData3 = array[2];
-    //   var dataToSend = {
-    //     row1: resultForData1,
-    //     // row2: resultForData2,
-    //     // row3: resultForData3,
-    //   };
-    //   console.log(resultForData1);
-    //   res.status(200).send(dataToSend);
-
-    //   // res.render("results", {
-    //   //   elapsedTime: elapsedTime / 1000,
-    //   //   lossValue: lossValue,
-    //   //   resultForData1: resultForData1[0],
-    //   //   resultForData2: resultForData2,
-    //   //   resultForData3: resultForData3,
-    //   // });
-    // });
-  } //end of the function
+  }
   run();
 
   res.send(req.body)
