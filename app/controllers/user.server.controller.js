@@ -142,8 +142,9 @@ exports.readEmail = function (req, res) {
 
 exports.checklistResults = (req, res) => {
   console.log("request body", req.body)
-  console.log("request id", req.id)
-  res.send("")
+  // request id currently is not working
+  // console.log("request id", req.id)
+  res.send(req.body)
 }
 
 // 'userByID' controller method to find a user by its id
