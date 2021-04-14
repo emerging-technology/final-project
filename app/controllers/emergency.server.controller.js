@@ -1,6 +1,5 @@
-﻿const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const User = mongoose.model("User");
-const VitalSign = mongoose.model("VitalSign");
 const Emergency = mongoose.model("Emergency");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -36,47 +35,9 @@ const getErrorMessage = function (err) {
   // Return the message error
   return message;
 };
-// Create a new user
-exports.create = function (req, res, next) {
-  // Create a new instance of the 'User' Mongoose model
-  var user = new User(req.body); //get data from React form
-  console.log("body: " + req.body.email);
-  // Use the 'User' instance's 'save' method to save a new user document
-  user.save(function (err) {
-    if (err) {
-      // Call the next middleware with an error message
-      return next(err);
-    } else {
-      // Use the 'response' object to send a JSON response
-      res.json(user);
-    }
-  });
-};
-// Create a new user
-exports.addVitalSign = function (req, res, next) {
-  let user = User(req.user);
-  let vitalSign = VitalSign(req.body);
-  vitalSign.save(function (err) {
-    if (err) {
-      // Call the next middleware with an error message
-      return next(err);
-    } else {
-      user.vitalSigns.push(vitalSign._id);
-      user.save(function (err) {
-        if (err) {
-          // Call the next middleware with an error message
-          return next(err);
-        } else {
-          // Use the 'response' object to send a JSON response
-          res.json(user);
-        }
-      });
-    }
-  });
-};
 
+// Create emergency message
 exports.addEmergency = function (req, res, next) {
-  console.log("~~~~ USER ID", req.id);
   let user = User(req.user);
   let emergency = Emergency(req.body);
   emergency.save(function (err) {
@@ -84,8 +45,7 @@ exports.addEmergency = function (req, res, next) {
       // Call the next middleware with an error message
       return next(err);
     } else {
-      user.emergencies.push(emergency._id);
-      console.log("~~~~ EMEREGENCY USER ID", emergency._id);
+      user.emergencies.push(emergencies._id);
       user.save(function (err) {
         if (err) {
           // Call the next middleware with an error message
@@ -98,7 +58,6 @@ exports.addEmergency = function (req, res, next) {
     }
   });
 };
-
 exports.listPatients = function (req, res, next) {
   // Use the 'User' instance's 'find' method to retrieve a new user document
   User.find({ userType: "Patient" }, function (err, users) {

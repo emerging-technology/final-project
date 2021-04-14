@@ -15,6 +15,7 @@ function AddVitalSignForm(props) {
     respiratoryRate: "",
   });
   const [showLoading, setShowLoading] = useState(false);
+  console.log("id: " + props.match.params.id);
   const apiUrl = "http://localhost:5000/vital_signs/" + props.match.params.id;
   //check if the user already logged-in
   const readCookie = async () => {

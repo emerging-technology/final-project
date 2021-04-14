@@ -17,5 +17,6 @@ module.exports = function () {
     });
   require("../app/models/user.server.model");
   require("../app/models/vital-sign.server.model");
+  require("../app/models/emergency.server.model");
   return db;
 };

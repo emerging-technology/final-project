@@ -18,6 +18,8 @@ import AddVitalSignForm from "./components/AddVitalSignForm";
 import PatientVitalSignsPage from "./components/PatientVitalSignsPage";
 
 import Login from "./components/Login";
+import AddEmergency from "./components/AddEmergency";
+import PatientPage from "./components/PatientPage";
 //
 function App() {
   return (
@@ -46,6 +48,14 @@ function App() {
         <Route
           render={() => <PatientVitalSignsPage />}
           path="/patient_vital_signs/:id"
+        />
+        <Route
+          render={() => <AddEmergency />}
+          path="/add_emergency"
+        />
+        <Route
+          render={() => <PatientPage />}
+          path="/patient_page"
         />
       </Switch>
       <Route path="/" exact>

@@ -28,6 +28,7 @@ var UserSchema = new Schema({
     default: "Nurse",
   },
   vitalSigns: [{ type: Schema.Types.ObjectId, ref: "VitalSign" }],
+  emergencies: [{ type: Schema.Types.ObjectId, ref: "Emergency"}],
 });
 
 // Set the 'fullname' virtual property
