@@ -2,14 +2,11 @@ import React, { useState, useEffect } from "react";
 import { withRouter } from 'react-router-dom';
 
 import Button from "react-bootstrap/Button";
-import Spinner from "react-bootstrap/Spinner";
 import axios from "axios";
 import ListGroup from "react-bootstrap/ListGroup";
 import { Card } from "react-bootstrap";
 import Spinner from "react-bootstrap/Spinner";
 import Jumbotron from "react-bootstrap/Jumbotron";
-import Button from "react-bootstrap/Button";
-import { withRouter } from "react-router-dom";
 
 function PatientPage(props) {
   const [data, setData] = useState([]);
@@ -60,7 +57,7 @@ function PatientPage(props) {
           Log Out
         </Button>
         <br/>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/zJpfX8R6Lfo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/zJpfX8R6Lfo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       </div>      
     </div>
   );
