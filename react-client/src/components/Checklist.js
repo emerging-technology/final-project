@@ -23,18 +23,22 @@ const Checklist = (props) => {
   };
 
   return (
-    <div>
-      <h1>What do you want to test?</h1>
-      <Form className="register-form" onSubmit={handleOnSubmit}>
-        <Form.Group>
-          <Form.Check type="checkbox" name="abdominal_pain" label="Abdominal Pain" onChange={handleInputChange}/>
-          <Form.Check type="checkbox" name="acid_taste" label="Acid Taste" onChange={handleInputChange}/>
-        </Form.Group>
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-12">
+          <h1>What do you want to test?</h1>
+          <Form className="register-form" onSubmit={handleOnSubmit}>
+              <Form.Group>
+              <Form.Check type="checkbox" name="abdominal_pain" label="Abdominal Pain" onChange={handleInputChange}/>
+              <Form.Check type="checkbox" name="acid_taste" label="Acid Taste" onChange={handleInputChange}/>
+              </Form.Group>
 
-        <Button variant="primary" type="submit">
-          Evaluate
-        </Button>
-      </Form>
+              <Button variant="primary" type="submit">
+              Evaluate
+              </Button>
+          </Form>
+        </div>
+      </div>
     </div>
   );
 };

@@ -32,9 +32,10 @@ const ChecklistResults = (props) => {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       {showLoading === false ? (
-        <div>
+        <div className="row">
+          <div className="col-lg-12">
           {showLoading && (
             <Spinner animation="border" role="status">
               <span className="sr-only">Loading...</span>
@@ -57,6 +58,7 @@ const ChecklistResults = (props) => {
               Go Back
             </NavLink>
           </div>
+        </div>
         </div>
       ) : (
         <div>
