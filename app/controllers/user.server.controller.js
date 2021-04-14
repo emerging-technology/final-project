@@ -140,6 +140,12 @@ exports.readEmail = function (req, res) {
   res.json(req.user);
 };
 
+exports.checklistResults = (req, res) => {
+  console.log("request body", req.body)
+  console.log("request id", req.id)
+  res.send("")
+}
+
 // 'userByID' controller method to find a user by its id
 exports.userByEmail = function (req, res, next, email) {
   // Use the 'User' static 'findOne' method to retrieve a specific user

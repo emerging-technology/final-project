@@ -16,6 +16,8 @@ import "./App.css";
 import SignUp from "./components/SignUp";
 import AddVitalSignForm from "./components/AddVitalSignForm";
 import PatientVitalSignsPage from "./components/PatientVitalSignsPage";
+import Checklist from "./components/Checklist";
+import ChecklistResults from "./components/ChecklistResults";
 
 import Login from "./components/Login";
 //
@@ -47,6 +49,8 @@ function App() {
           render={() => <PatientVitalSignsPage />}
           path="/patient_vital_signs/:id"
         />
+        <Route component={Checklist} path="/checklist" />
+        <Route component={ChecklistResults} path="/checklistResults" />
       </Switch>
       <Route path="/" exact>
         <div className="container">

@@ -18,6 +18,8 @@ module.exports = function (app) {
     .delete(users.delete);
   app.route("/usersEmail/:userEmail").get(users.readEmail);
 
+  app.post("/checklistResults", users.checklistResults)
+
   // Set up the 'userId' parameter middleware
   //All param callbacks will be called before any handler of
   //any route in which the param occurs, and they will each
