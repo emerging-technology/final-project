@@ -24,6 +24,9 @@ function PatientPage(props) {
   return (
     <div className="container">
       <h3>Welcome Patient {props.patient.fullName}!</h3>
+      <Button variant="primary" href="/checklist">
+        Check Symptoms
+      </Button>
       <Button variant="primary" onClick={deleteCookie}>
         Log Out
       </Button>

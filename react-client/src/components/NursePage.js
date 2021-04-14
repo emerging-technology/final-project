@@ -60,6 +60,9 @@ function NursePage(props) {
           </ListGroup.Item>
         ))}
       </ListGroup>
+      <Button variant="primary" href="/checklist">
+        Check Symptoms
+      </Button> &nbsp;
       <Button variant="primary" onClick={deleteCookie}>
         Log Out
       </Button>
