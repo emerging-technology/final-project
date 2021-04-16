@@ -14,19 +14,24 @@ function Login(props) {
   const apiUrl = "http://localhost:5000/signin";
   //send email and password to the server
   // for initial authentication
-  const auth = async () => {
+  const auth =  () => {
     console.log("calling auth");
     console.log(email);
     try {
       //make a get request to /authenticate end-point on the server
-      const loginData = { auth: { email, password } };
+      const loginData = { auth: { email, password }};
       //call api
-      const res = await axios.post(apiUrl, loginData, {
+      axios.post(apiUrl, loginData,  {
         withCredentials: true,
+      }).then(result=>{
+        console.log(result.data.screen);
+        //process the response
+        setScreen(result.data.screen);
+      }).catch(error=>{
+
+        console.log(error);
       });
-      console.log(res.data.screen);
-      //process the response
-      setScreen(res.data.screen);
+    
     } catch (e) {
       //print the error
       console.log(e);

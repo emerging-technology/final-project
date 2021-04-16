@@ -22,6 +22,8 @@ import ChecklistResults from "./components/ChecklistResults";
 import Login from "./components/Login";
 import AddEmergency from "./components/AddEmergency";
 import PatientPage from "./components/PatientPage";
+import SendDailyTip from "./components/SendDailyTip";
+import PatientDailyTips from "./components/PatientDailyTips";
 //
 function App() {
   return (
@@ -52,12 +54,16 @@ function App() {
           path="/patient_vital_signs/:id"
         />
         <Route
+          render={() => <SendDailyTip />}
+          path="/patient_daily_tip/:id"
+        />
+        <Route
           render={() => <AddEmergency />}
           path="/add_emergency"
         />
         <Route
-          render={() => <PatientPage />}
-          path="/patient_page"
+          render={() => <PatientDailyTips />}
+          path="/patient_daily_tips/:id"
         />
         <Route component={Checklist} path="/checklist" />
         <Route component={ChecklistResults} path="/checklistResults" />

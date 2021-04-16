@@ -9,7 +9,6 @@ import { withRouter } from "react-router-dom";
 function AddEmergency(props) {
   const [screen, setScreen] = useState("auth");
   const [emergency, setEmergency] = useState({
-    respondent: "",
     message: "",
   });
   const [showLoading, setShowLoading] = useState(false);
@@ -40,14 +39,13 @@ function AddEmergency(props) {
     setShowLoading(true);
     e.preventDefault();
     const data = {
-      respondent: emergency.respondent,
       message: emergency.message,
     };
     axios
       .post(apiUrl, data, { withCredentials: true })
       .then((result) => {
         setShowLoading(false);
-        props.history.push("/patient_page/");
+        props.history.push("/login/");
       })
       .catch((error) => setShowLoading(false));
   };
@@ -70,17 +68,6 @@ function AddEmergency(props) {
               Create a Message
             </h5>
             <Form onSubmit={saveMessage}>
-              <Form.Group>
-                <Form.Label>Respondent</Form.Label>
-                <Form.Control
-                  type="string"
-                  name="respondent"
-                  id="respondent"
-                  placeholder="Enter Respondent Name"
-                  value={emergency.respondent}
-                  onChange={onChange}
-                />
-              </Form.Group>
               <Form.Group>
                 <Form.Label>Message</Form.Label>
                 <Form.Control

@@ -5,9 +5,10 @@ const EmergencySchema = new Schema({
     type: Date,
     default: Date.now, 
   },
-  respondent: {
+  status: {
     type: String,
-    default: "",
+    enum: ["New", "Old"],
+    defaul: "New",
     trim: true,
   },
   message: {

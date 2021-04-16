@@ -38,7 +38,7 @@ const getErrorMessage = function (err) {
 
 // Create emergency message
 exports.addEmergency = function (req, res, next) {
-  let user = User(req.user);
+  let user = req.user;
   let emergency = Emergency(req.body);
   emergency.save(function (err) {
     if (err) {
@@ -93,7 +93,6 @@ exports.userByID = async function (req, res, next, id) {
         return next(err);
       } else {
         // Set the 'req.user' property
-        user = new User(user);
         req.user = user;
         console.log("user: " + user);
         // Call the next middleware

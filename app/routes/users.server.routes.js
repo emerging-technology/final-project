@@ -8,6 +8,7 @@ module.exports = function (app) {
   // and list users when /users link is selected
   app.get("/patients", users.requiresLogin, users.listPatients); //go to http://localhost:3000/users to see the list
   app.route("/vital_signs/:userId").post(users.addVitalSign);
+  app.route("/daily_tips/:userId").post(users.requiresLogin,users.addDailyTip);
   app.route("/post_emergency").post(users.requiresLogin, users.addEmergency);
   //handle a post request made to root path
   app.post("/", users.create);

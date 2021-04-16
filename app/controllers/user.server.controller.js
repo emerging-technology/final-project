@@ -2,6 +2,7 @@
 const User = mongoose.model("User");
 const VitalSign = mongoose.model("VitalSign");
 const Emergency = mongoose.model("Emergency");
+const DailyTip = mongoose.model("DailyTip");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const config = require("../../config/config");
@@ -56,7 +57,7 @@ exports.create = function (req, res, next) {
 };
 // Create a new user
 exports.addVitalSign = function (req, res, next) {
-  let user = User(req.user);
+  let user = req.user;
   let vitalSign = VitalSign(req.body);
   vitalSign.save(function (err) {
     if (err) {
@@ -64,39 +65,45 @@ exports.addVitalSign = function (req, res, next) {
       return next(err);
     } else {
       user.vitalSigns.push(vitalSign._id);
-      user.save(function (err) {
-        if (err) {
-          // Call the next middleware with an error message
-          return next(err);
-        } else {
-          // Use the 'response' object to send a JSON response
-          res.json(user);
-        }
-      });
+      User.updateOne({email: user.email}, {$set: {vitalSigns: user.vitalSigns}}).then(
+        user=>res.json(user)
+      ).catch(error=>next(error));
+    }
+  });
+};
+// Create a new user
+exports.addDailyTip = function (req, res, next) {
+  let user =req.user;
+  let dailyTip = DailyTip(req.body);
+  dailyTip.save(function (err) {
+    if (err) {
+      // Call the next middleware with an error message
+      return next(err);
+    } else {
+      user.dailyTips.push(dailyTip._id);
+      User.updateOne({email: user.email}, {$set: {dailyTips: user.dailyTips}}).then(
+        user=>res.json(user)
+      ).catch(error=>next(error));
     }
   });
 };
 
 exports.addEmergency = function (req, res, next) {
-  console.log("~~~~ USER ID", req.id);
-  let user = User(req.user);
+  let id = req.id;
   let emergency = Emergency(req.body);
   emergency.save(function (err) {
     if (err) {
       // Call the next middleware with an error message
       return next(err);
     } else {
-      user.emergencies.push(emergency._id);
-      console.log("~~~~ EMEREGENCY USER ID", emergency._id);
-      user.save(function (err) {
-        if (err) {
-          // Call the next middleware with an error message
-          return next(err);
-        } else {
-          // Use the 'response' object to send a JSON response
-          res.json(user);
-        }
+      User.findById(id, function (err, user){
+        if(err)next(err);
+        user.emergencies.push(emergency._id);
+        User.updateOne({email: user.email}, {$set: {emergencies: user.emergencies}}).then(
+          user=>res.json(user)
+        ).catch(error=>next(error));
       });
+    
     }
   });
 };
@@ -129,6 +136,10 @@ exports.userByID = async function (req, res, next, id) {
       "vitalSigns",
       "heartRate bloodPressure bodyTemperature respiratoryRate testedAt"
     )
+    .populate(
+      "dailyTips",
+      "message createdAt"
+    )
     .exec((err, user) => {
       if (err) {
         console.log("error in userById", err);
@@ -136,7 +147,7 @@ exports.userByID = async function (req, res, next, id) {
         return next(err);
       } else {
         // Set the 'req.user' property
-        user = new User(user);
+        user = User(user);
         req.user = user;
         console.log("user: " + user);
         // Call the next middleware
@@ -364,6 +375,7 @@ exports.authenticate = function (req, res, next) {
       try {
         console.log(user);
         //compare passwords
+        console.log("password comparison:",bcrypt.compareSync(password, user.password));
         if (bcrypt.compareSync(password, user.password)) {
           // Create a new token with the user id in the payload
           // and which expires 300 seconds after issue

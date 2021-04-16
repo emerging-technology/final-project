@@ -9,6 +9,9 @@ import Spinner from "react-bootstrap/Spinner";
 import Jumbotron from "react-bootstrap/Jumbotron";
 
 function PatientPage(props) {
+  if(!props.patient){
+    props.history.push('/');
+  }
   const [data, setData] = useState([]);
   const [showLoading, setShowLoading] = useState(true);
   const [screen, setScreen] = useState("auth");
@@ -44,18 +47,23 @@ function PatientPage(props) {
   // read the info from props, coming from the ancestor component
   return (
     <div className="container">
-      <div className="flex">
-        <h5>Patient Full Name: {data.fullName}</h5>
-        <h5>Vital Signs</h5>
-        <Button href="/add_emergency">
-          Add Emergency Message
-        </Button>        
-        <Button variant="primary" href="/checklist">
-          Check Symptoms
-        </Button>
-        <Button variant="primary" onClick={deleteCookie}>
-          Log Out
-        </Button>
+      <div>
+        <h5>Patient Full Name: {props.patient.fullName}</h5>
+        <div  className="d-flex justify-content-around">
+
+          <Button href="/add_emergency">
+            Add Emergency Message
+          </Button>        
+          <Button variant="primary" href="/checklist">
+            Check Symptoms
+          </Button>
+          <Button variant="primary" href={"/patient_daily_tips/"+props.patient.id}>
+            My Daily Tips 
+          </Button>
+          <Button variant="primary" onClick={deleteCookie}>
+            Log Out
+          </Button>
+        </div>
         <br/>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/zJpfX8R6Lfo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       </div>      

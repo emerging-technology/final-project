@@ -51,11 +51,15 @@ function NursePage(props) {
       <ListGroup>
         {data.screen != "auth" && data.length !== 0 &&data.map((patient, idx) => (
           <ListGroup.Item key={idx}>
-            <div className="d-flex justify-content-around">
+            <div className="d-flex justify-content-between">
               {patient.fullName}
-              <a href={"/patient_vital_signs/" + patient._id}>
+              <div><Button  variant="primary" className="mr-1"  href={"/patient_vital_signs/" + patient._id}>
                 Check Vital Signs
-              </a>
+              </Button>
+              <Button  variant="primary"  href={"/patient_daily_tip/" + patient._id}>
+                Send Daily Tip
+              </Button>
+              </div>
             </div>
           </ListGroup.Item>
         ))}
