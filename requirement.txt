@@ -1,3 +1,0 @@
-patient
-vital signs 
-body temperature, heart rate, blood pressure, or respiratory rate

@@ -211,7 +211,6 @@ exports.readEmail = function (req, res) {
 
 exports.checklistResults = (req, res) => {
   const checklist = require("../../checklist.json");
-  const checklistTest = require("../../checklist-test.json");
   console.log("request body", req.body);
   // console.log("checklist", checklist)
   // console.log("checklistTest", checklistTest)
