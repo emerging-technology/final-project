@@ -16,5 +16,9 @@ const EmergencySchema = new Schema({
     default: "",
     trim: true,
   },
+  patient: {
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  },
 });
 mongoose.model("Emergency", EmergencySchema);

@@ -65,15 +65,18 @@ exports.addVitalSign = function (req, res, next) {
       return next(err);
     } else {
       user.vitalSigns.push(vitalSign._id);
-      User.updateOne({email: user.email}, {$set: {vitalSigns: user.vitalSigns}}).then(
-        user=>res.json(user)
-      ).catch(error=>next(error));
+      User.updateOne(
+        { email: user.email },
+        { $set: { vitalSigns: user.vitalSigns } }
+      )
+        .then((user) => res.json(user))
+        .catch((error) => next(error));
     }
   });
 };
 // Create a new user
 exports.addDailyTip = function (req, res, next) {
-  let user =req.user;
+  let user = req.user;
   let dailyTip = DailyTip(req.body);
   dailyTip.save(function (err) {
     if (err) {
@@ -81,31 +84,61 @@ exports.addDailyTip = function (req, res, next) {
       return next(err);
     } else {
       user.dailyTips.push(dailyTip._id);
-      User.updateOne({email: user.email}, {$set: {dailyTips: user.dailyTips}}).then(
-        user=>res.json(user)
-      ).catch(error=>next(error));
+      User.updateOne(
+        { email: user.email },
+        { $set: { dailyTips: user.dailyTips } }
+      )
+        .then((user) => res.json(user))
+        .catch((error) => next(error));
     }
   });
 };
 
+exports.getNewEmergencies = function (req, res, next) {
+  Emergency.find({ status: "New" })
+    .populate("patient", "firstName lastName")
+    .exec(function (err, emergencies) {
+      if (err) next(err);
+      else res.json(emergencies);
+    });
+};
 exports.addEmergency = function (req, res, next) {
   let id = req.id;
   let emergency = Emergency(req.body);
-  emergency.save(function (err) {
-    if (err) {
-      // Call the next middleware with an error message
-      return next(err);
-    } else {
-      User.findById(id, function (err, user){
-        if(err)next(err);
-        user.emergencies.push(emergency._id);
-        User.updateOne({email: user.email}, {$set: {emergencies: user.emergencies}}).then(
-          user=>res.json(user)
-        ).catch(error=>next(error));
-      });
-    
-    }
-  });
+  emergency.status = "New";
+
+    User.findById(id)
+      .then((user) => {
+        emergency.patient = user;
+         emergency.save((err, emer)=>{
+          console.log(emer);
+          User.findByIdAndUpdate(user.id, {$set:{emergencies: user.emergencies}}).then(console.log);
+          res.json(emer);
+        })})
+      .catch((error) => next(error));
+}
+exports.responseEmergency = function (req, res, next) {
+  let id = req.id;
+  let emergency = Emergency(req.body);
+  emergency.status = "Old";
+  console.log(emergency);
+  Emergency.findByIdAndUpdate(emergency.id, {$set:{status:"Old"}}).then(emer=>{
+    User.findById(id, function (err, user) {
+      if (err) next(err);
+      user.respondedEmergencies.push(emer.id);
+      User.updateOne(
+        { email: user.email },
+        { $set: { respondedEmergencies: user.emergencies } }
+      )
+        .then((user) => res.json(user))
+        .catch((error) => next(error));
+    });
+  }) .catch((error) => next(error));
+    // .save((err, emer) => {
+    //   if(err) next(err);
+    //   console.log(emer);
+     
+    // });
 };
 
 exports.listPatients = function (req, res, next) {
@@ -136,10 +169,7 @@ exports.userByID = async function (req, res, next, id) {
       "vitalSigns",
       "heartRate bloodPressure bodyTemperature respiratoryRate testedAt"
     )
-    .populate(
-      "dailyTips",
-      "message createdAt"
-    )
+    .populate("dailyTips", "message createdAt")
     .exec((err, user) => {
       if (err) {
         console.log("error in userById", err);
@@ -182,7 +212,7 @@ exports.readEmail = function (req, res) {
 exports.checklistResults = (req, res) => {
   const checklist = require("../../checklist.json");
   const checklistTest = require("../../checklist-test.json");
-  console.log("request body", req.body)
+  console.log("request body", req.body);
   // console.log("checklist", checklist)
   // console.log("checklistTest", checklistTest)
   // request id currently is not working
@@ -191,7 +221,7 @@ exports.checklistResults = (req, res) => {
   // convert/setup our data for tensorflow.js
   //tensor of features for training data
   const trainingData = tf.tensor2d(
-    checklist.map(item => [
+    checklist.map((item) => [
       item.abdominal_pain ? 1 : 0,
       item.arm_numbness ? 1 : 0,
       item.arm_weakness ? 1 : 0,
@@ -222,13 +252,13 @@ exports.checklistResults = (req, res) => {
       item.taste_acid ? 1 : 0,
       item.toothache ? 1 : 0,
       item.vomiting ? 1 : 0,
-      item.weakness ? 1 : 0
+      item.weakness ? 1 : 0,
     ])
   );
-  console.log("training data", trainingData)
+  console.log("training data", trainingData);
   // //tensor of output for training data
   const outputData = tf.tensor2d(
-    checklist.map(item => [
+    checklist.map((item) => [
       item.cause === "heart_attack" ? 1 : 0,
       item.cause === "stroke" ? 1 : 0,
       item.cause === "gastroenteritis" ? 1 : 0,
@@ -241,13 +271,13 @@ exports.checklistResults = (req, res) => {
       item.cause === "dentin_hypersensitivity" ? 1 : 0,
       item.cause === "paresthesia" ? 1 : 0,
       item.cause === "muscular_dystrophy" ? 1 : 0,
-      item.cause === "sleep_apnea" ? 1 : 0
+      item.cause === "sleep_apnea" ? 1 : 0,
     ])
   );
   // //
   // //tensor of features for testing data
-  const testingData = tf.tensor2d(
-    [[
+  const testingData = tf.tensor2d([
+    [
       req.body.abdominal_pain ? 1 : 0,
       req.body.arm_numbness ? 1 : 0,
       req.body.arm_weakness ? 1 : 0,
@@ -278,8 +308,9 @@ exports.checklistResults = (req, res) => {
       req.body.taste_acid ? 1 : 0,
       req.body.toothache ? 1 : 0,
       req.body.vomiting ? 1 : 0,
-      req.body.weakness ? 1 : 0
-    ]])
+      req.body.weakness ? 1 : 0,
+    ],
+  ]);
 
   // build neural network using a sequential model
   const model = tf.sequential();
@@ -330,13 +361,13 @@ exports.checklistResults = (req, res) => {
       },
     });
     const results = model.predict(testingData);
-    results.array().then(array => {
-      console.log(array)
-      res.send(array)
-    })
+    results.array().then((array) => {
+      console.log(array);
+      res.send(array);
+    });
   }
   run();
-}
+};
 
 // 'userByID' controller method to find a user by its id
 exports.userByEmail = function (req, res, next, email) {
@@ -375,7 +406,10 @@ exports.authenticate = function (req, res, next) {
       try {
         console.log(user);
         //compare passwords
-        console.log("password comparison:",bcrypt.compareSync(password, user.password));
+        console.log(
+          "password comparison:",
+          bcrypt.compareSync(password, user.password)
+        );
         if (bcrypt.compareSync(password, user.password)) {
           // Create a new token with the user id in the payload
           // and which expires 300 seconds after issue

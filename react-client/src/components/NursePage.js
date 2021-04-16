@@ -42,6 +42,7 @@ function NursePage(props) {
   return (
     <div className="container">
       <h3>Welcome Nurse {props.nurse.fullName}!</h3>
+      <Button variant="danger" className="my-1" href="/emergenies_alerts">View Emergency Alerts</Button>
       {showLoading && (
         <Spinner animation="border" role="status">
           <span className="sr-only">Loading...</span>

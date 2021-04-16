@@ -8,8 +8,12 @@ module.exports = function (app) {
   // and list users when /users link is selected
   app.get("/patients", users.requiresLogin, users.listPatients); //go to http://localhost:3000/users to see the list
   app.route("/vital_signs/:userId").post(users.addVitalSign);
-  app.route("/daily_tips/:userId").post(users.requiresLogin,users.addDailyTip);
-  app.route("/post_emergency").post(users.requiresLogin, users.addEmergency);
+  app.route("/daily_tips/:userId").post(users.requiresLogin, users.addDailyTip);
+  app
+    .route("/emergencies")
+    .get(users.requiresLogin, users.getNewEmergencies)
+    .put(users.requiresLogin, users.responseEmergency)
+    .post(users.requiresLogin, users.addEmergency);
   //handle a post request made to root path
   app.post("/", users.create);
   // Set up the 'users' parameterized routes
@@ -20,7 +24,7 @@ module.exports = function (app) {
     .delete(users.delete);
   app.route("/usersEmail/:userEmail").get(users.readEmail);
 
-  app.post("/checklistResults", users.checklistResults)
+  app.post("/checklistResults", users.checklistResults);
 
   // Set up the 'userId' parameter middleware
   //All param callbacks will be called before any handler of

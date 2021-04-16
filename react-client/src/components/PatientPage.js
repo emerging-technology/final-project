@@ -52,7 +52,7 @@ function PatientPage(props) {
         <div  className="d-flex justify-content-around">
 
           <Button href="/add_emergency">
-            Add Emergency Message
+            Send Emergency Message
           </Button>        
           <Button variant="primary" href="/checklist">
             Check Symptoms

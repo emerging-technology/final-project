@@ -7,34 +7,11 @@ import Button from "react-bootstrap/Button";
 import { withRouter } from "react-router-dom";
 
 function AddEmergency(props) {
-  const [screen, setScreen] = useState("auth");
   const [emergency, setEmergency] = useState({
     message: "",
   });
   const [showLoading, setShowLoading] = useState(false);
-  const apiUrl = "http://localhost:5000/post_emergency";
-  //check if the user already logged-in
-  const readCookie = async () => {
-    try {
-      console.log("--- in readCookie function ---");
-      //
-      const res = await axios.get("http://localhost:5000/read_cookie", {
-        withCredentials: true,
-      });
-      if (res.data.screen !== undefined) {
-        setScreen(res.data.screen);
-        console.log(res.data.screen);
-      }
-    } catch (e) {
-      setScreen("auth");
-      props.history.push("/login");
-    }
-  };
-  //runs the first time the view is rendered
-  //to check if user is signed in
-  useEffect(() => {
-    readCookie();
-  }, []);
+  const apiUrl = "http://localhost:5000/emergencies";
   const saveMessage = (e) => {
     setShowLoading(true);
     e.preventDefault();
@@ -81,7 +58,7 @@ function AddEmergency(props) {
               </Form.Group>             
 
               <Button variant="primary" type="submit">
-                Create
+                Send
               </Button>
             </Form>
           </div>

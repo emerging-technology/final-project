@@ -21,8 +21,8 @@ import ChecklistResults from "./components/ChecklistResults";
 
 import Login from "./components/Login";
 import AddEmergency from "./components/AddEmergency";
-import PatientPage from "./components/PatientPage";
 import SendDailyTip from "./components/SendDailyTip";
+import EmergencyAlerts from "./components/EmergencyAlerts"
 import PatientDailyTips from "./components/PatientDailyTips";
 //
 function App() {
@@ -60,6 +60,11 @@ function App() {
         <Route
           render={() => <AddEmergency />}
           path="/add_emergency"
+        />
+        
+        <Route
+          render={() => <EmergencyAlerts />}
+          path="/emergenies_alerts"
         />
         <Route
           render={() => <PatientDailyTips />}
