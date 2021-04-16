@@ -66,7 +66,7 @@ function EmergencyAlerts(props) {
               <Card.Text>
                 Request by: {emergencyAlert.patient.firstName} {emergencyAlert.patient.lastName}
               </Card.Text>
-              <Button onClick={()=>responseEmergency(emergencyAlert)}>Respose</Button>
+              <Button onClick={()=>responseEmergency(emergencyAlert)}>Done</Button>
             </Card.Body>
           </Card>
         ))
