@@ -8,6 +8,7 @@ module.exports = function (app) {
   // and list users when /users link is selected
   app.get("/patients", users.requiresLogin, users.listPatients); //go to http://localhost:3000/users to see the list
   app.route("/vital_signs/:userId").post(users.addVitalSign);
+  app.route("/vital_signs").post(users.requiresLogin, users.addUserVitalSign);
   app.route("/daily_tips/:userId").post(users.requiresLogin, users.addDailyTip);
   app
     .route("/emergencies")
@@ -22,6 +23,9 @@ module.exports = function (app) {
     .get(users.read)
     .put(users.update)
     .delete(users.delete);
+  app
+    .route("/users")
+    .get(users.requiresLogin, users.readUser);
   app.route("/usersEmail/:userEmail").get(users.readEmail);
 
   app.post("/checklistResults", users.checklistResults);

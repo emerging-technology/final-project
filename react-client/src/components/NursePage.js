@@ -54,12 +54,13 @@ function NursePage(props) {
           <ListGroup.Item key={idx}>
             <div className="d-flex justify-content-between">
               {patient.fullName}
-              <div><Button  variant="primary" className="mr-1"  href={"/patient_vital_signs/" + patient._id}>
-                Check Vital Signs
-              </Button>
-              <Button  variant="primary"  href={"/patient_daily_tip/" + patient._id}>
-                Send Daily Tip
-              </Button>
+              <div>
+                <Button  variant="primary" className="mr-1"  href={"/patient_vital_signs/" + patient._id}>
+                  Check Vital Signs
+                </Button>
+                <Button  variant="primary"  href={"/patient_daily_tip/" + patient._id}>
+                  Send Daily Tip
+                </Button>
               </div>
             </div>
           </ListGroup.Item>

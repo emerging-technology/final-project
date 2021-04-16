@@ -57,6 +57,9 @@ function PatientPage(props) {
           <Button variant="primary" href="/checklist">
             Check Symptoms
           </Button>
+          <Button  variant="primary" className="mr-1"  href="/patient_vital_signs/">
+            Check Vital Signs
+          </Button>
           <Button variant="primary" href={"/patient_daily_tips/"+props.patient.id}>
             My Daily Tips 
           </Button>

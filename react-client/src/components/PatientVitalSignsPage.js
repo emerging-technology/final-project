@@ -10,6 +10,13 @@ import { withRouter } from "react-router-dom";
 function PatientVitalSignsPage(props) {
   const [data, setData] = useState([]);
   const [showLoading, setShowLoading] = useState(true);
+
+  if (props.match.params.id === undefined) {
+    props.match.params.id = "";
+  }
+
+  console.log("id", props.match.params.id)
+
   useEffect(() => {
     console.log("start");
     axios

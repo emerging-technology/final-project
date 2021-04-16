@@ -74,6 +74,28 @@ exports.addVitalSign = function (req, res, next) {
     }
   });
 };
+exports.addUserVitalSign = function (req, res, next) {
+  console.log("id: ", req.id)
+  User.findById(req.id)
+    .then(user => {
+      let vitalSign = VitalSign(req.body);
+      vitalSign.save(err => {
+        if (err) {
+          // Call the next middleware with an error message
+          return next(err);
+        } else {
+          user.vitalSigns.push(vitalSign._id);
+          User.updateOne(
+            { email: user.email },
+            { $set: { vitalSigns: user.vitalSigns } }
+          )
+            .then(user => res.json(user))
+            .catch(error => next(error));
+        }
+      });
+    })
+    .catch(error => next(error));
+};
 // Create a new user
 exports.addDailyTip = function (req, res, next) {
   let user = req.user;
@@ -158,6 +180,19 @@ exports.listPatients = function (req, res, next) {
 exports.read = function (req, res) {
   // Use the 'response' object to send a JSON response
   res.json(req.user);
+};
+
+exports.readUser = function (req, res) {
+  // Use the 'response' object to send a JSON response
+  // res.json(req.user);
+
+  console.log("id: ", req.id)
+  User.findById(req.id)
+    .populate("vitalSigns"/* , "bodyTemperature heartRate bloodPressure respiratoryRate" */)
+    .exec((err, user) => {
+      if (err) next(err);
+      else res.json(user);
+    })
 };
 //
 // 'userByID' controller method to find a user by its id

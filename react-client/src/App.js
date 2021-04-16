@@ -49,9 +49,14 @@ function App() {
           <SignUp />
         </Route>
         <Route render={() => <AddVitalSignForm />} path="/add_vital_sign/:id" />
+        <Route render={() => <AddVitalSignForm />} path="/add_vital_sign" />
         <Route
           render={() => <PatientVitalSignsPage />}
           path="/patient_vital_signs/:id"
+        />
+        <Route
+          render={() => <PatientVitalSignsPage />}
+          path="/patient_vital_signs"
         />
         <Route
           render={() => <SendDailyTip />}
